@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}Block #{{block.height}}{% endblock %}
+
+{% block content %}
+    <table cellspacing='0'>
+        <thead>
+
+            <tr>
+                <th>Block version</th>
+                <td>{{block.version}}</td>
+            </tr>
+            
+            <tr>
+                <th>Block height</th>
+                <td>{{block.height}}</td>
+            </tr>
+            
+            <tr>
+                <th>Timestamp</th>
+                <td>{{block.timestamp}}</td>
+            </tr>
+            
+            <tr>
+                <th># Transactions</th>
+                <td><a href="/blocktx/{{block.height}}">{{block.confirmed_transaction_list | length}}</a></td>
+            </tr>
+
+            <tr>
+                <th>Block hash</th>
+                <td>{{block.hash}}</td>
+            </tr>
+
+            <tr>
+                <th>Previous block Hash</th>
+                {% if previous_block is not none %}
+                    <td><a href="/block/{{previous_block.height}}">{{previous_block.hash}}</a></td>
+                {% else %}
+                    <td>---</td>
+                {%endif %}
+            </tr>
+
+            <tr>
+                <th>Amount ICX</th>
+                <td>{{block.amount_icx}} ({{block.amount_icx_hex}})</td>
+            </tr>
+
+            {% if block.version != "tbears" %}
+                
+            {%endif %}
+        
+        </thead>
+    </table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Latest blocks{% endblock %}
+
+{% block content %}
+    <table cellspacing='0'>
+        <thead>
+            <tr>
+                <th>Block Height</th>
+                <th>Timestamp</th>
+                <th># Transactions</th>
+                <th>Block Hash</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for block in blocks %}
+            <tr>
+                <td><a href="/block/{{block.height}}">{{block.height}}</a></td>
+                <td>{{block.timestamp}}</td>
+                <td><a href="/blocktx/{{block.height}}">{{block.confirmed_transaction_list | length}}</a></td>
+                <td><a href="/block/{{block.height}}"><pre>{{block.hash}}</pre></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

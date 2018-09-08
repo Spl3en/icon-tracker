@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+    <head>
+        {% block head %}
+            <title>T-Bears Tracker</title>
+            <link rel="stylesheet" href="{{url_for('static',filename='styles/table.css')}}">
+            <link rel="stylesheet" href="{{url_for('static',filename='styles/layout.css')}}">
+        {% endblock %}
+    </head>
+
+    <body>
+
+        <div id="header"> 
+            {% block header %}
+                <a href="/"><div id="logo"></div></a>
+                {% block title %}{% endblock %}
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>        
+
+        <div id="footer">
+            {% block footer %}
+                Made with ♥ by <a href="https://twitter.com/Spl3en_ICON">Spl3en</a>
+            {% endblock %}
+        </div>
+
+    </body>
+
+</html>
