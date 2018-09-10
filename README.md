@@ -18,4 +18,8 @@ I use this project as a study project on ICON development. Please don't expect t
 
 ### Transaction Viewer
 
-WIP
+![Transaction Viewer](https://i.imgur.com/9fKO61n.png)
+
+### Address Viewer
+
+![Address Viewer](https://i.imgur.com/4rsGet1.png)
