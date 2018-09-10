@@ -43,10 +43,11 @@
                 <th>Amount ICX</th>
                 <td>{{block.amount_icx}}</td>
             </tr>
-
-            {% if block.version != "tbears" %}
-                
-            {%endif %}
+        
+            <tr>
+                <th>Message</th>
+                <td>{{block['confirmed_transaction_list'][0]["message"]}}</td>
+            </tr>
         
         </thead>
     </table>
