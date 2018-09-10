@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}Address {{address.hash}}{% endblock %}
+
+{% block content %}
+    <table cellspacing='0'>
+        <thead>
+
+            <tr>
+                <th>Address</th>
+                <td>{{address.hash}}</td>
+            </tr>
+            
+            <tr>
+                <th>Balance</th>
+                <td>{{address.balance}}</td>
+            </tr>
+            
+        </thead>
+    </table>
+{% endblock %}

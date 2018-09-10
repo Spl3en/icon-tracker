@@ -5,7 +5,7 @@
 }
 
 html {
-    height: 80%;
+    height: 100%;
     box-sizing: border-box;
     font-family: Montserrat;
 }
@@ -13,7 +13,7 @@ html {
 body {
     position: relative;
     margin: 0;
-    min-height: 80%;
+    height: 100%;
 }
 
 a, a:visited {
@@ -31,16 +31,29 @@ a, a:visited {
     box-shadow: 0 4px 5px #d1d1d1;
 }
 
-#logo {
+#header #provider
+{
+    float : right;
+    font-size : 15px;
+    font-family: Montserrat;
+}
+
+#header #logo {
+    float : left;
     background: url(/static/media/logo-icon.svg) 0 0 no-repeat;
     width: 170px;
     height: 60px;
     margin-top: 0;
 }
 
-/* ============= HEADER ============= */
+#header #title {
+    clear: both;
+}
+
+/* ============= CONTENT ============= */
 #content {
     min-height: 90%;
+    padding : 20px;
 }
 
 /* ============= FOOTER ============= */

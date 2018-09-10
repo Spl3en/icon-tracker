@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Transactions in Block <a href="/block/{{block.height}}">#{{block.height}}</a>{% endblock %}
+
+{% block content %}
+
+    <table cellspacing='0'>
+        <thead>
+            <tr>
+                <th>Tx Hash</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Amount</th>
+                <th>TxFee</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for tx in transactions %}
+            <tr>
+                <!--<td><a href="/transaction/{{tx.hash}}">{{tx.txHash}}</a></td>-->
+                <td>{{tx.txHash}}</td>
+                {% if tx.from is not none %}
+                    <td><a href="/address/{{tx.from}}">{{tx.from}}</a></td>
+                {% else %}
+                    <td>---</td>
+                {%endif %}
+                <td><a href="/address/{{tx.to}}">{{tx.to}}</a></td>
+                <td>{{tx.value}}</td>
+                <td>{{tx.fee}}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

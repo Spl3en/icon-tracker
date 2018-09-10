@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
-{% block title %}Latest blocks{% endblock %}
+{% block title %}Homepage{% endblock %}
 
 {% block content %}
+
+    <h1>Latest blocks</h1>
     <table cellspacing='0'>
         <thead>
             <tr>
@@ -20,6 +22,26 @@
                 <td><a href="/block/{{block.height}}"><pre>{{block.hash}}</pre></a></td>
             </tr>
         {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Genesis block</h1>
+    <table cellspacing='0'>
+        <thead>
+            <tr>
+                <th>Block Height</th>
+                <th>Timestamp</th>
+                <th># Transactions</th>
+                <th>Block Hash</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="/block/{{genesis.height}}">{{genesis.height}}</a></td>
+                <td>{{genesis.timestamp}}</td>
+                <td><a href="/blocktx/{{genesis.height}}">{{genesis.confirmed_transaction_list | length}}</a></td>
+                <td><a href="/block/{{genesis.height}}"><pre>{{genesis.hash}}</pre></a></td>
+            </tr>
         </tbody>
     </table>
 {% endblock %}

@@ -13,9 +13,24 @@
 
         <div id="header"> 
             {% block header %}
-                <a href="/"><div id="logo"></div></a>
-                {% block title %}{% endblock %}
+                
+                <a href="/">
+                    <div id="logo"></div>
+                </a>
+
+                <div id="provider">
+                        <img src="/static/media/wifi.png"/> Provider URL : 
+                    <br><a href="{{constants.HTTP_PROVIDER}}">{{constants.HTTP_PROVIDER}}</a>
+                    <br><img src="/static/media/github.png"/> Github source code : 
+                    <br><a href="{{constants.GITHUB_REPOSITORY}}">{{constants.GITHUB_REPOSITORY}}</a>
+                </div>
+
+                <div id="title">
+                    {% block title %}{% endblock %}
+                </div>
+
             {% endblock %}
+
         </div>
 
         <div id="content">
