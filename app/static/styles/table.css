@@ -43,31 +43,6 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 del { text-decoration: line-through; }
 table {border-spacing: 0; } /* IMPORTANT, I REMOVED border-collapse: collapse; FROM THIS LINE IN ORDER TO MAKE THE OUTER BORDER RADIUS WORK */
 
-/*------------------------------------------------------------------ */
-
-/*This is not important*/
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background: white;
-    margin:0 auto;
-}
-a:link {
-    color: #666;
-    font-weight: bold;
-    text-decoration:none;
-}
-a:visited {
-    color: #666;
-    font-weight:bold;
-    text-decoration:none;
-}
-a:active,
-a:hover {
-    color: #bd5a35;
-    text-decoration:underline;
-}
-
-
 /*
 Table Style - This is what you want
 ------------------------------------------------------------------ */
