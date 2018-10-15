@@ -9,16 +9,10 @@
         {% endblock %}
 
         <script>
-            var nid = {{session.nid}};
-
-            function changeNetwork ()
-            {
-                window.location.href = '/set_nid/' + nid;
-            }
-
             function onChangeNid (e)
             {
                 nid = e.options[e.selectedIndex].value;
+                window.location.href = '/set_nid/' + nid;
             }
 
         </script>
@@ -36,14 +30,11 @@
                         <img src="/static/media/wifi.png"/> Network endpoint : (<a href="http://iconstatus.spl3en.com/">Status</a>)
                     <br>
 
-                    <form method="GET" onsubmit="changeNetwork(); return false;"; return false;">
-                        <select name="networkId" onchange="onChangeNid(this)">
-                        {% for endpoint in constants.NETWORK_ENDPOINTS %}
-                            <option {% if (loop.index-1 == session.nid) %} selected="selected" {% endif %} value="{{loop.index-1}}">{{endpoint.url}}</option>
-                        {% endfor %}
-                        </select>
-                        <input type="submit" value="Go!"/>
-                    </form>
+                    <select name="networkId" onchange="onChangeNid(this)">
+                    {% for endpoint in constants.NETWORK_ENDPOINTS %}
+                        <option {% if (loop.index-1 == session.nid) %} selected="selected" {% endif %} value="{{loop.index-1}}">{{endpoint.url}}</option>
+                    {% endfor %}
+                    </select>
 
                     <br><img src="/static/media/github.png"/> Github source code : 
                     <br><a href="{{constants.GITHUB_REPOSITORY}}">{{constants.GITHUB_REPOSITORY}}</a>
