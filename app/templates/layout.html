@@ -24,7 +24,7 @@
                     <form method="POST" action="{{url_for('set_nid')}}">
                         <select name="networkId">
                         {% for endpoint in constants.NETWORK_ENDPOINTS %}
-                            <option {% if (loop.index == session.nid) %} selected="selected" {% endif %} value="{{loop.index}}">{{endpoint.url}}</option>
+                            <option {% if (loop.index == session.nid) %} selected="selected" {% endif %} value="{{loop.index-1}}">{{endpoint.url}}</option>
                         {% endfor %}
                         </select>
                         <input type="submit" value="Go!">

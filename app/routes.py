@@ -25,6 +25,10 @@ def index():
 @app.route ('/set_nid', methods=['POST'])
 def set_nid ():
     session["nid"] = int(request.form.get('networkId'))
+    
+    if (session["nid"] < 0 or session["nid"] > len(constants.NETWORK_ENDPOINTS)):
+        session["nid"] = 0
+
     return redirect (url_for('index'))
 
 @app.route ('/block/<int:height>')

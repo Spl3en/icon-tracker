@@ -9,8 +9,6 @@ def get_block (block):
     for tx in block['confirmed_transaction_list']:
         # Transaction values transfered
         if 'value' in tx:
-            print(tx['value'])
-            print(type(tx['value']))
             if 'from' in tx:
                 amount_loop += tx['value']
 
