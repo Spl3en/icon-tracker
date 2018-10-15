@@ -8,6 +8,21 @@
             <link rel="stylesheet" href="{{url_for('static',filename='styles/layout.css')}}">
         {% endblock %}
 
+        <script>
+            var nid = {{session.nid}};
+
+            function changeNetwork ()
+            {
+                window.location.href = '/set_nid/' + nid;
+            }
+
+            function onChangeNid (e)
+            {
+                nid = e.options[e.selectedIndex].value;
+            }
+
+        </script>
+
     <body>
 
         <div id="header"> 
@@ -21,13 +36,13 @@
                         <img src="/static/media/wifi.png"/> Network endpoint : (<a href="http://iconstatus.spl3en.com/">Status</a>)
                     <br>
 
-                    <form method="GET" action="{{url_for('set_nid', nid=loop.index-1)}}">
-                        <select name="networkId">
+                    <form method="GET" onsubmit="changeNetwork(); return false;"; return false;">
+                        <select name="networkId" onchange="onChangeNid()">
                         {% for endpoint in constants.NETWORK_ENDPOINTS %}
                             <option {% if (loop.index-1 == session.nid) %} selected="selected" {% endif %} value="{{loop.index-1}}">{{endpoint.url}}</option>
                         {% endfor %}
                         </select>
-                        <input type="submit" value="Go!">
+                        <input type="submit" value="Go!"/>
                     </form>
 
                     <br><img src="/static/media/github.png"/> Github source code : 
