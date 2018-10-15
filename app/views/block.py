@@ -7,7 +7,8 @@ def get_block (block):
     amount_loop = 0
 
     for tx in block['confirmed_transaction_list']:
-
+        print(tx['value'])
+        print(type(tx['value']))
         # Transaction values transfered
         if 'value' in tx:
             print(tx['value'])
