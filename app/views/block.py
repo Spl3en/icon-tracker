@@ -11,7 +11,7 @@ def get_block (block):
         # Transaction values transfered
         if 'value' in tx:
             if 'from' in tx:
-                amount_loop += int(tx['value'], 16)
+                amount_loop += tx['value']
 
         # Account creation value
         if 'accounts' in tx:
