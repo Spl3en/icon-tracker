@@ -22,7 +22,7 @@ def index():
 
     return render_template ('index.html', session=session, constants=constants, blocks=blocks, genesis=genesis)
 
-@app.route ('/set_nid/<int:height>')
+@app.route ('/set_nid/<int:nid>')
 def set_nid (nid):
     session["nid"] = nid
     
