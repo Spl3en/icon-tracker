@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block title %} | Homepage | <span id="titleUrl">{{constants.NETWORK_ENDPOINTS[session.nid].url}}</span> {% endblock %}
+{% block title %} | Homepage | <span id="titleUrl">{{constants.NETWORK_ENDPOINTS[session.nid].url}} - {{constants.NETWORK_ENDPOINTS[session.nid].description}}</span> {% endblock %}
 
 {% block content %}
 
