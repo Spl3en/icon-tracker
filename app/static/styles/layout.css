@@ -64,6 +64,10 @@ a:hover {
     float : left;
 }
 
+#titleUrl {
+    font-size : 25px;
+}
+
 /* ============= CONTENT ============= */
 #content {
     min-height: 90%;
