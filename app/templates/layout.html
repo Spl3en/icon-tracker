@@ -21,7 +21,7 @@
                         <img src="/static/media/wifi.png"/> Network endpoint : (<a href="http://iconstatus.spl3en.com/">Status</a>)
                     <br>
 
-                    <form method="GET" action="{{url_for('set_nid')}}">
+                    <form method="GET" action="{{url_for('set_nid', nid=loop.index-1)}}">
                         <select name="networkId">
                         {% for endpoint in constants.NETWORK_ENDPOINTS %}
                             <option {% if (loop.index-1 == session.nid) %} selected="selected" {% endif %} value="{{loop.index-1}}">{{endpoint.url}}</option>
