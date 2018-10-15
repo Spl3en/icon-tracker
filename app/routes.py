@@ -22,9 +22,9 @@ def index():
 
     return render_template ('index.html', session=session, constants=constants, blocks=blocks, genesis=genesis)
 
-@app.route ('/set_nid', methods=['POST'])
-def set_nid ():
-    session["nid"] = int(request.form.get('networkId'))
+@app.route ('/set_nid/<int:height>')
+def set_nid (nid):
+    session["nid"] = nid
     
     if (session["nid"] < 0 or session["nid"] > len(constants.NETWORK_ENDPOINTS)):
         session["nid"] = 0
