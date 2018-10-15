@@ -1,7 +1,9 @@
-from app.models.icon import icon_service
+from app.models.icon import get_icon_service
 import copy
 
-def get_transactions (block):
+def get_transactions (session, block):
+
+    icon_service = get_icon_service (session)
 
     txs = []
     
@@ -19,8 +21,6 @@ def get_transactions (block):
         if 'accounts' in tx:
             for account in tx['accounts']:
                 tx = copy.deepcopy(tx)
-                print(tx)
-                print(account)
                 tx['from'] = None
                 tx['to'] = account['address']
                 tx['txHash'] = account['name']

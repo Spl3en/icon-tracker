@@ -1,6 +1,8 @@
-from app.models.icon import icon_service
+from app.models.icon import get_icon_service
 
-def get_latest_blocks (count):
+def get_latest_blocks (session, count):
+
+    icon_service = get_icon_service (session)
 
     blocks = []
     last = 0

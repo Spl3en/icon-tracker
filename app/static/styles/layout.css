@@ -60,7 +60,8 @@ a:hover {
 }
 
 #header #title {
-    clear: both;
+    padding-top : 30px;
+    float : left;
 }
 
 /* ============= CONTENT ============= */
