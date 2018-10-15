@@ -13,7 +13,7 @@ def get_transactions (session, block):
 
         # Transaction values transfered
         if 'value' in tx:
-            tx['value'] = tx['value']
+            tx['value'] = int(tx['value'], 16)
         else:
             tx['value'] = 0
 
