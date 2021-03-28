@@ -1,4 +1,5 @@
 NETWORK_ENDPOINTS = [
+    {'url' : "http://localhost:9000",            'description' : 'Localhost'},
     {'url' : "https://ctz.solidwallet.io",       'description' : 'Mainnet 1'},
     {'url' : "https://wallet.icon.foundation",   'description' : 'Mainnet 2'},
     {'url' : "https://bicon.net.solidwallet.io", 'description' : 'Testnet for DApps 1'},
