@@ -24,7 +24,10 @@ def get_transactions (session, block):
                 tx['from'] = None
                 tx['to'] = account['address']
                 tx['txHash'] = account['name']
-                tx['value'] = int(account['balance'], 16)
+                try:
+                    tx['value'] = int(account['balance'], 16)
+                except:
+                    tx['value'] = 0
                 txs.append(tx)
         else:
             txs.append(tx)

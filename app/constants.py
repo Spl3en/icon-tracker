@@ -5,6 +5,7 @@ NETWORK_ENDPOINTS = [
     {'url' : "https://bicon.net.solidwallet.io", 'description' : 'Testnet for DApps 1'},
     {'url' : "https://cicon.net.solidwallet.io", 'description' : 'Testnet for DApps 2'},
     {'url' : "https://dicon.net.solidwallet.io", 'description' : 'Testnet for DApps 3'},
+    {'url' : "https://gicon.net.solidwallet.io", 'description' : 'Testnet for ICON2'},
     {'url' : "https://test-ctz.solidwallet.io",  'description' : 'Testnet for Exchanges'},
     {'url' : "http://13.209.103.183:9000",       'description' : 'ICON devteam net'}
 ]

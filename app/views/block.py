@@ -15,7 +15,10 @@ def get_block (block):
         # Account creation value
         if 'accounts' in tx:
             for account in tx['accounts']:
-                amount_loop += int(account['balance'], 16)
+                try:
+                    amount_loop += int(account['balance'], 16)
+                except:
+                    pass
 
     block['amount_loop'] = amount_loop
     block['amount_icx'] = float(amount_loop / (10 ** 18))
